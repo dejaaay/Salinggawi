@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Multiple Menus</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/landing.css">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="LandingPage.html">
+            <img src="images/logo.png" alt="UST Salinggawi Dance Troupe Logo" class="logo-img me-2">
+            <div class="logo-text">
+                <div>UST SALINGGAWI DANCE TROUPE</div>
+                <div class="subtitle">THE OFFICIAL DANCE TROUPE OF THE UNIVERSITY OF SANTO TOMAS</div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shows">SHOWS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="container">
+    <!-- Upcoming Shows Section -->
+    <section class="upcoming-shows">
+        <div class="show-header">
+            <h2>Upcoming Shows</h2>
+            <a href="#" class="show-link">
+                View our previous performances here
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="show-list">
+            <div class="show-item">
+                <div class="show-date">February 2025</div>
+                <div class="show-title">CCP Pasinaya 2025</div>
+                <div class="show-location">Cultural Center of the Philippines Complex, Pasay City</div>
+            </div>
+            <div class="show-item">
+                <div class="show-date">April 2025</div>
+                <div class="show-title">UST SDT 53rd Annual Dance Concert</div>
+                <div class="show-location">UST Education Auditorium, Albertus Magnus Bldg., Sampaloc, Manila</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="testimonial-quote">
+                    Inspiring and heartwarming show. Witnessed the magic of UST Salinggawi Dance Troupe with my Miss Saigon cast! We were in awe of their craft, feeling honored to experience their artistry. Proud to be Filipino! Thank you for the unforgettable performance! UST SALINGGAWI DANCE TROUPE IS A PHILIPPINE TREASURE!
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-author mt-4 mt-md-0">
+                    <h5 class="mb-1">Mr. Winchester Lopez</h5>
+                    <p class="mb-0">Dance Supervisor/Swing, Miss Saigon</p>
+                    <p class="mb-0">Australia and Asian Tour 2023-2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognitions Section -->
+    <section class="recognitions-section py-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="recognition-card dark-card">
+                    <h3>Recognitions</h3>
+                    <p>In recent years, the UST Salinggawi Dance Troupe has consistently showcased exceptional performance and unwavering commitment, earning multiple prestigious accolades and distinctions.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="recognition-card light-card">
+                    <h3>Sayaw Pinoy 2019</h3>
+                    <p class="mb-2">Contemporary Category</p>
+                    <h4>2ND PLACE</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add animation to show items when they come into view
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.show-item, .testimonial-quote, .recognition-card').forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+});
+</script>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
