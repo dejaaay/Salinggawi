@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members and Advisers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        .advisers-section {
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 1px;
+            background-color: #000;
+        }
+
+        .section-title::before {
+            right: calc(50% + 100px);
+        }
+
+        .section-title::after {
+            left: calc(50% + 100px);
+        }
+
+        .adviser-card {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .adviser-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .adviser-name {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .adviser-position {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .members-section {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .filter-buttons {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            background: #333;
+            border: none;
+            color: white;
+            padding: 0.5rem 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-btn.active {
+            background-color: #ffeb00;
+            color: black;
+        }
+
+        .carousel-container {
+            position: relative;
+        }
+
+        .member-carousel {
+            display: none;
+        }
+
+        .member-carousel.active {
+            display: block;
+        }
+
+        .member-card {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s;
+            position: absolute;
+            width: 100%;
+        }
+
+        .member-card.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .member-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .member-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .member-college {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-position {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-control {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .carousel-control:hover {
+            color: #ffeb00;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #333;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #ffeb00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Advisers Section -->
+        <section class="advisers-section">
+            <h2 class="section-title">Adviser and Coaches</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="adviser-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
+                        <div class="adviser-name">Asst. Prof Eliza Gonzales</div>
+                        <div class="adviser-position">Adviser</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="adviser-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
+                        <div class="adviser-name">Mr. Stephen Badajos</div>
+                        <div class="adviser-position">Artistic Director</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="adviser-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
+                        <div class="adviser-name">Mr. Mark Chaiwalla</div>
+                        <div class="adviser-position">Head Coach (Cheer)</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="adviser-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
+                        <div class="adviser-name">Mr. Richard Gabog</div>
+                        <div class="adviser-position">Asst. Coach (Dance)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Members Section -->
+        <section class="members-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="dance">DANCE</button>
+                <button class="filter-btn" data-category="cheer">CHEER</button>
+                <button class="filter-btn" data-category="artists">ARTISTS</button>
+            </div>
+
+            <div class="carousel-container">
+                <!-- Dance Members Carousel -->
+                <div class="member-carousel active" id="dance-carousel">
+                    <div class="member-card active" data-index="0">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>Yasha Gonzales</h3>
+                            <div class="member-college">College of Fine Arts & Design</div>
+                            <div class="member-position">Senior Member, Social Media Manager</div>
+                        </div>
+                    </div>
+                    <div class="member-card" data-index="1">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>Maria Santos</h3>
+                            <div class="member-college">College of Fine Arts & Design</div>
+                            <div class="member-position">Senior Member, Dance Captain</div>
+                        </div>
+                    </div>
+                    <div class="member-card" data-index="2">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>Juan Dela Cruz</h3>
+                            <div class="member-college">College of Fine Arts & Design</div>
+                            <div class="member-position">Junior Member, Performer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cheer Members Carousel -->
+                <div class="member-carousel" id="cheer-carousel">
+                    <div class="member-card active" data-index="0">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>John Smith</h3>
+                            <div class="member-college">College of Physical Education</div>
+                            <div class="member-position">Senior Member, Cheer Captain</div>
+                        </div>
+                    </div>
+                    <div class="member-card" data-index="1">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>Sarah Johnson</h3>
+                            <div class="member-college">College of Physical Education</div>
+                            <div class="member-position">Senior Member, Base</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artists Members Carousel -->
+                <div class="member-carousel" id="artists-carousel">
+                    <div class="member-card active" data-index="0">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>Alex Rivera</h3>
+                            <div class="member-college">College of Fine Arts & Design</div>
+                            <div class="member-position">Senior Member, Creative Director</div>
+                        </div>
+                    </div>
+                    <div class="member-card" data-index="1">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
+                        <div class="member-info">
+                            <h3>Patricia Luna</h3>
+                            <div class="member-college">College of Fine Arts & Design</div>
+                            <div class="member-position">Junior Member, Graphic Designer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-control prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="carousel-control next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="carousel-indicators"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const carousels = document.querySelectorAll('.member-carousel');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+        const indicatorsContainer = document.querySelector('.carousel-indicators');
+        
+        let currentCategory = 'dance';
+        let autoPlayInterval;
+
+        function updateCarousel(category) {
+            // Update active button
+            filterButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+
+            // Update active carousel
+            carousels.forEach(carousel => {
+                carousel.classList.toggle('active', carousel.id === `${category}-carousel`);
+            });
+
+            // Reset current slide to first
+            const activeCarousel = document.querySelector(`#${category}-carousel`);
+            const slides = activeCarousel.querySelectorAll('.member-card');
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+            });
+
+            // Update indicators
+            updateIndicators(slides.length);
+
+            currentCategory = category;
+        }
+
+        function updateIndicators(count) {
+            indicatorsContainer.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (i === 0) indicator.classList.add('active');
+                indicator.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        function goToSlide(index) {
+            const activeCarousel = document.querySelector(`#${currentCategory}-carousel`);
+            const slides = activeCarousel.querySelectorAll('.member-card');
+            const indicators = document.querySelectorAll('.indicator');
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            const activeCarousel = document.querySelector(`#${currentCategory}-carousel`);
+            const slides = activeCarousel.querySelectorAll('.member-card');
+            const currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            const nextIndex = (currentIndex + 1) % slides.length;
+            goToSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            const activeCarousel = document.querySelector(`#${currentCategory}-carousel`);
+            const slides = activeCarousel.querySelectorAll('.member-card');
+            const currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
+        }
+
+        // Initialize carousel
+        updateCarousel(currentCategory);
+
+        // Event Listeners
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateCarousel(button.dataset.category);
+            });
+        });
+
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+
+        // Auto-play functionality
+        function startAutoPlay() {
+            stopAutoPlay(); // Clear any existing interval
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+        }
+
+        // Start auto-play
+        startAutoPlay();
+
+        // Pause on hover
+        document.querySelector('.carousel-container').addEventListener('mouseenter', stopAutoPlay);
+        document.querySelector('.carousel-container').addEventListener('mouseleave', startAutoPlay);
+    </script>
+</body>
+</html>
