@@ -1,21 +1,37 @@
-
 .logo-img {
     width: 80px;
     height: 80px;
     margin-right: 10px;
 }
-.navbar-nav, .nav-item {
-    padding-left:20px;
+:root {
+    --primary-yellow: #ffeb00;
 }
+
 .navbar {
-    background-color: #FFFF01;
-    padding: 25px;
+    background-color: var(--primary-yellow) !important;
 }
+
+.nav-link {
+    color: #000 !important;
+    /* font-weight: 500; */
+}
+
+/*Carousel*/
 .carouse-hero {
-    padding-top: 40px;
+    padding-top: 20px;
 }
-body {
-    font-family: Arial, sans-serif;
+#carouselExampleSlidesOnly .carousel-inner img {
+    height: 95vh; /* Adjust height as needed */
+    object-fit: cover; /* Ensures images fill the space properly */
+}
+#carouselawards .carousel-inner img {
+    height: 350px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures images fill the space properly */
+}
+
+
+footer {
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .upcoming-shows {
@@ -27,7 +43,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .show-link {

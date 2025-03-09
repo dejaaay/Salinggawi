@@ -5,311 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UST Salinggawi Dance Troupe</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/landing.css">
     <style>
-        :root {
-            --primary-yellow: #ffeb00;
-        }
-
-        .navbar {
-            background-color: var(--primary-yellow) !important;
-            padding: 1rem 2rem;
-        }
-
-        .navbar-brand img {
-            height: 70px;
-        }
-
-        .nav-link {
-            color: #000 !important;
-            font-weight: 500;
-        }
-
-        .about-section {
-            padding: 4rem 0;
-        }
-
-        .about-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-
-        .about-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 100%;
-            height: 3px;
-            background-color: #000;
-        }
-
-        .about-image {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .mission-vision {
-            margin: 3rem 0;
-        }
-
-        .mission-box, .vision-box {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 2rem;
-            height: 100%;
-            border-radius: 5px;
-        }
-
-        .board-section {
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .board-title {
-            margin-bottom: 2rem;
-        }
-
-        .board-member {
-            margin-bottom: 1rem;
-        }
-
-        .board-image {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 1rem;
-        }
-
-        .board-name {
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-        }
-
-        .board-position {
-            color: #666;
-        }
-        .board-section {
-            padding: 4rem 0;
-            background-color: #fff;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 1px;
-            background-color: #000;
-        }
-
-        .board-member {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .member-image {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 1rem;
-            display: block;
-            background-color: #f8f9fa;
-        }
-
-        .member-name {
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-            font-size: 0.9rem;
-        }
-
-        .member-position {
-            color: #666;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .academic-year {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        .advisers-section {
-            padding: 2rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .section-title::before,
-        .section-title::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 100px;
-            height: 1px;
-            background-color: #000;
-        }
-
-        .section-title::before {
-            right: calc(50% + 100px);
-        }
-
-        .section-title::after {
-            left: calc(50% + 100px);
-        }
-
-        .adviser-card {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .adviser-image {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .adviser-name {
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .adviser-position {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        .members-section {
-            background-color: #1a1a1a;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .filter-buttons {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .filter-btn {
-            background: #333;
-            border: none;
-            color: white;
-            padding: 0.5rem 2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .filter-btn.active {
-            background-color: #ffeb00;
-            color: black;
-        }
-
-        .carousel-container {
-            position: relative;
-        }
-
-        .member-carousel {
-            display: none;
-        }
-
-        .member-carousel.active {
-            display: block;
-        }
-
-        .member-card {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            color: white;
-            opacity: 0;
-            transition: opacity 0.5s;
-            position: absolute;
-            width: 100%;
-        }
-
-        .member-card.active {
-            opacity: 1;
-            position: relative;
-        }
-
-        .member-image {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .member-info h3 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .member-college {
-            color: #ccc;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-position {
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .carousel-control {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .carousel-control:hover {
-            color: #ffeb00;
-        }
-
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .indicator {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #333;
-            cursor: pointer;
-        }
-
-        .indicator.active {
-            background-color: #ffeb00;
-        }
-    </style>
+        @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Funnel+Display:wght@300..800&display=swap');
+        </style>
+    <link rel="stylesheet" href="css/aboutus.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -334,11 +33,11 @@
                         <a class="nav-link" href="AboutUs.html">ABOUT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/shows">SHOWS</a>
+                        <a class="nav-link" href="Events.html">SHOWS</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="/contact">CONTACT US</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -389,23 +88,23 @@
             <div class="row justify-content-center">
                 <div class="col-md-4 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Robert Lopez</div>
+                        <img src="images/d-  robert.jpg" alt="" class="member-image">
+                        <div class="member-name">Robert Luyao</div>
                         <div class="member-position">President</div>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Kim Belleza</div>
+                        <img src="images/d-  kim.jpg" alt="" class="member-image">
+                        <div class="member-name">Kim Bollozos</div>
                         <div class="member-position">Vice President (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Dominique Campomanes</div>
-                        <div class="member-position">Vice President (Dance)</div>
+                        <img src="images/c-dae.jpg" alt="" class="member-image">
+                        <div class="member-name">Daedream Camporedondo</div>
+                        <div class="member-position">Vice President (Cheer)</div>
                     </div>
                 </div>
             </div>
@@ -414,30 +113,30 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Francis Aquino</div>
+                        <img src="images/d-  francis.jpg" alt="" class="member-image">
+                        <div class="member-name">Francis Abarro</div>
                         <div class="member-position">Secretary (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Kristhiane Magpantay</div>
-                        <div class="member-position">Secretary (Dance)</div>
+                        <img src="images/c-tala.jpg" alt="" class="member-image">
+                        <div class="member-name">Kristalmae Maquidato</div>
+                        <div class="member-position">Secretary (Cheer)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Samantha Malonda</div>
+                        <img src="images/d- manta.jpg" alt="" class="member-image">
+                        <div class="member-name">Samantha Melendez</div>
                         <div class="member-position">Asst. Secretary (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-27%20120210-Yh9a5elkuLf6bvivrnL0dFmJ4pq18N.png" alt="" class="member-image">
-                        <div class="member-name">Glysh Jean Labre</div>
-                        <div class="member-position">Asst. Secretary (Dance)</div>
+                        <img src="images/c- elay.jpg" alt="" class="member-image">
+                        <div class="member-name">Elijah Jean Labre</div>
+                        <div class="member-position">Asst. Secretary (Cheer)</div>
                     </div>
                 </div>
             </div>
@@ -446,30 +145,30 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Angela Marie Destreza</div>
+                        <img src="images/d- ange.jpg" alt="" class="member-image">
+                        <div class="member-name">Angela Marie Domingo</div>
                         <div class="member-position">Treasurer (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Jayme Marie Baurile</div>
-                        <div class="member-position">Treasurer (Dance)</div>
+                        <img src="images/c-jeny.jpg" alt="" class="member-image">
+                        <div class="member-name">Jenny Marie Eusebio</div>
+                        <div class="member-position">Secretary (Cheer)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Allyson Victorino</div>
+                        <img src="images/d- ally.jpg" alt="" class="member-image">
+                        <div class="member-name">Allyana Victorino</div>
                         <div class="member-position">Auditor (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Rhenz Pellejo</div>
-                        <div class="member-position">Auditor (Dance)</div>
+                        <img src="images/c-rhena.jpg" alt="" class="member-image">
+                        <div class="member-name">Rhena Polinar</div>
+                        <div class="member-position">Auditor (Cheer)</div>
                     </div>
                 </div>
             </div>
@@ -478,30 +177,30 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Razel Fernandez</div>
+                        <img src="images/d-  gie.jpg" alt="" class="member-image">
+                        <div class="member-name">Riecel Forcadela</div>
                         <div class="member-position">P.R.O. (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Kurt Vincent Magpayo</div>
-                        <div class="member-position">P.R.O. (Dance)</div>
+                        <img src="images/c- kurt.jpg" alt="" class="member-image">
+                        <div class="member-name">Kurt Vincent Magtoto</div>
+                        <div class="member-position">P.R.O. (Cheer)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Jose Angel Rivera</div>
+                        <img src="images/d-  ja.jpg" alt="" class="member-image">
+                        <div class="member-name">Jhon Angel Rivera</div>
                         <div class="member-position">Costume Custodian (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Trisha Anne Montante</div>
-                        <div class="member-position">Costume Custodian (Dance)</div>
+                        <img src="images/c-trix.jpg" alt="" class="member-image">
+                        <div class="member-name">Trixie Anne Monterde</div>
+                        <div class="member-position">Costume Custodian (Cheer)</div>
                     </div>
                 </div>
             </div>
@@ -511,28 +210,28 @@
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
                         <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Alcander Aciña</div>
+                        <div class="member-name">Allaistar Aviles</div>
                         <div class="member-position">Props. Custodian (Dance)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
-                        <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">POPjohn Aquino</div>
-                        <div class="member-position">Props. Custodian (Dance)</div>
+                        <img src="images/c- pj.jpg" alt="" class="member-image">
+                        <div class="member-name">Philjohn Aquino</div>
+                        <div class="member-position">Props. Custodian (Cheer)</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
                         <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Gianna Dela Cruz</div>
+                        <div class="member-name">Clarenz Dela Cruz</div>
                         <div class="member-position">Head Props</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="board-member">
                         <img src="images/P-Ange.jpg" alt="" class="member-image">
-                        <div class="member-name">Karl Ramos</div>
+                        <div class="member-name">Karl Ferrer</div>
                         <div class="member-position">Social Media Manager</div>
                     </div>
                 </div>
@@ -546,28 +245,24 @@
             <div class="row justify-content-center">
                 <div class="col-md-3">
                     <div class="adviser-card">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
-                        <div class="adviser-name">Asst. Prof Eliza Gonzales</div>
+                        <div class="adviser-name">Asst. Prof Eliza Sanchez</div>
                         <div class="adviser-position">Adviser</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="adviser-card">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
-                        <div class="adviser-name">Mr. Stephen Badajos</div>
+                        <div class="adviser-name">Mr. Stephen Biadoma</div>
                         <div class="adviser-position">Artistic Director</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="adviser-card">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
                         <div class="adviser-name">Mr. Mark Chaiwalla</div>
                         <div class="adviser-position">Head Coach (Cheer)</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="adviser-card">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="adviser-image">
                         <div class="adviser-name">Mr. Richard Gabog</div>
                         <div class="adviser-position">Asst. Coach (Dance)</div>
                     </div>
@@ -575,16 +270,16 @@
             </div>
         </section>
 
-        <!-- Members Section -->
+        <!-- Members Section
         <section class="members-section">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="dance">DANCE</button>
                 <button class="filter-btn" data-category="cheer">CHEER</button>
                 <button class="filter-btn" data-category="artists">ARTISTS</button>
-            </div>
+            </div> -->
 
-            <div class="carousel-container">
-                <!-- Dance Members Carousel -->
+            <!-- <div class="carousel-container">
+                Dance Members Carousel
                 <div class="member-carousel active" id="dance-carousel">
                     <div class="member-card active" data-index="0">
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
@@ -610,9 +305,9 @@
                             <div class="member-position">Junior Member, Performer</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Cheer Members Carousel -->
+                <!-- Cheer Members Carousel
                 <div class="member-carousel" id="cheer-carousel">
                     <div class="member-card active" data-index="0">
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
@@ -630,9 +325,9 @@
                             <div class="member-position">Senior Member, Base</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Artists Members Carousel -->
+                <!-- Artists Members Carousel
                 <div class="member-carousel" id="artists-carousel">
                     <div class="member-card active" data-index="0">
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-nXVfeYC2MvPG3WAoXG749lwOHWQNOu.png" alt="" class="member-image">
@@ -664,7 +359,7 @@
                 <div class="carousel-indicators"></div>
             </div>
         </section>
-    </div>
+    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>

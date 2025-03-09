@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productions & Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Funnel+Display:wght@300..800&display=swap');
+    </style>
+    <link rel="stylesheet" href="css/Events.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="LandingPage.html">
+            <img src="images/logo.png" alt="UST Salinggawi Dance Troupe Logo" class="logo-img me-2">
+            <div class="logo-text">
+                <div>UST SALINGGAWI DANCE TROUPE</div>
+                <div class="subtitle">THE OFFICIAL DANCE TROUPE OF THE UNIVERSITY OF SANTO TOMAS</div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="LandingPage.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AboutUs.html">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Events.html">SHOWS</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="/contact">CONTACT US</a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Upcoming Production -->
+<!-- Upcoming Production -->
+<section class="upcoming-production">
+    <img src="images/o3.jpg" 
+         alt="Ondine Background" class="background-image">
+    <!-- <div class="production-content">
+
+        <p>This Year's Concert is a Contemporary Dance Theatre adaptation of Jean Giraudoux's play "ONDINE": a medieval love story of a water nymph and a knight, and the folly that results from their union. The playwright tells the tale of this doomed relationship in a theatrical fantasy where charming fable mingles with the rigor of classical tragedy. Adapted in Filipino sensibilities: Dance Production will tell the story An ethereal sea nymph who falls in love with a handsome nobleman only to lose true love to the harsh realities of the outside world.</p>
+        <div class="date">Coming soon this April 25, 2025</div>
+    </div> -->
+
+    <button class="top-right-button">Buy Here</button>
+</section>
+
+
+    <!-- Events Section -->
+    <div class="container">
+        <div class="events-header">
+            <div>
+                <h2>Events</h2>
+                <p>Look back at our past productions</p>
+            </div>
+            <a href="#" class="view-link">View our previous events here.</a>
+        </div>
+
+        <div class="row">
+            <!-- Event Card 1 -->
+            <div class="col-md-6">
+                <div class="event-card">
+                    <img src="images/3.jpg">
+                    <div class="event-content">
+                        <h3 class="event-title">Danscene XXXV: Rebirth</h3>
+                        <p class="event-date">November 08, 2024</p>
+                        <p>The UST Salinggawi Dance Troupe's annual dance competition continues to live.</p>
+                    </div>
+                    <a href="#" class="view-gallery">View Gallery</a>
+                </div>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="col-md-6">
+                <div class="event-card">
+                    <img src="images/2.jpg" alt="pic">
+                    <div class="event-content">
+                        <h3 class="event-title">Layag: Indak sa daloy ng lahing marilag</h3>
+                        <p class="event-date">November 08, 2024</p>
+                        <p>The UST Salinggawi Dance Troupe's 55th annual dance concert production returns.</p>
+                    </div>
+                    <a href="#" class="view-gallery">View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add fade-in animation for event cards
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.event-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+.logo-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+:root {
+    --primary-yellow: #ffeb00;
+}
+
+.navbar {
+    background-color: var(--primary-yellow) !important;
+}
+
+
+
+.nav-link {
+    color: #000 !important;
+    /* font-weight: 500; */
+}
+
+.about-section {
+    padding: 4rem 0;
+}
+
+.about-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.mission-vision {
+    margin: 3rem 0;
+}
+
+.mission-box, .vision-box {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 2rem;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.board-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.board-title {
+    margin-bottom: 2rem;
+}
+
+.board-member {
+    margin-bottom: 1rem;
+}
+
+.board-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.board-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.board-position {
+    color: #666;
+}
+.board-section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background-color: #000;
+}
+
+.board-member {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1rem;
+    display: block;
+    background-color: #f8f9fa;
+}
+
+.member-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.member-position {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.academic-year {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+.advisers-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 1px;
+    background-color: #000;
+}
+
+.section-title::before {
+    right: calc(50% + 100px);
+}
+
+.section-title::after {
+    left: calc(50% + 100px);
+}
+
+.adviser-card {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.adviser-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.adviser-name {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.adviser-position {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.members-section {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.filter-buttons {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filter-btn {
+    background: #333;
+    border: none;
+    color: white;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #ffeb00;
+    color: black;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.member-carousel {
+    display: none;
+}
+
+.member-carousel.active {
+    display: block;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    width: 100%;
+}
+
+.member-card.active {
+    opacity: 1;
+    position: relative;
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.member-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.member-college {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.member-position {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.carousel-control {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.carousel-control:hover {
+    color: #ffeb00;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #ffeb00;
+}
