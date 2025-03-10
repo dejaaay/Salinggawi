@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Funnel+Display:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Funnel+Display:wght@300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: 'Poppins', serif;
+}
 .logo-img {
     width: 80px;
     height: 80px;
@@ -9,6 +15,7 @@
 
 .navbar {
     background-color: var(--primary-yellow) !important;
+    font-weight: 500;
 }
 
 
@@ -67,12 +74,14 @@
 
 .board-member {
     margin-bottom: 1rem;
+    margin-top: 10px;
 }
 
 .board-image {
     width: 150px;
     height: 150px;
     margin-bottom: 1rem;
+    margin-top: 10px;
 }
 
 .board-name {
@@ -301,4 +310,20 @@
 
 .indicator.active {
     background-color: #ffeb00;
+}
+@media (max-width: 768px) {
+    .logo-img {
+        width: 50px; /* Reduce logo size */
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 0.9rem; /* Reduce title size */
+        max-width: 150px;
+    }
+
+}
+@media (max-width: 576px) {
+    .subtitle {
+        display: none;
+    }
 }
